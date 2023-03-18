@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node dist/src/server.js",
+    "start": "node dist/server.js",
     "server":"nodemon src/server.ts",
     "client":"npm run start --prefix frontend",
     "lint": "eslint . --ext .ts",

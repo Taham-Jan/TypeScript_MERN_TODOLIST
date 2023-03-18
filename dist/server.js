@@ -15,3 +15,4 @@ mongoose_1.default.connect(validateEnv_1.default.MONGO_URI)
     });
 })
     .catch(console.error);
+//# sourceMappingURL=server.js.map

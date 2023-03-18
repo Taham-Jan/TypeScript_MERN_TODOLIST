@@ -22,16 +22,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const reportWebVitals = (onPerfEntry) => {
-    if (onPerfEntry && onPerfEntry instanceof Function) {
-        Promise.resolve().then(() => __importStar(require('web-vitals'))).then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-            getCLS(onPerfEntry);
-            getFID(onPerfEntry);
-            getFCP(onPerfEntry);
-            getLCP(onPerfEntry);
-            getTTFB(onPerfEntry);
-        });
-    }
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-exports.default = reportWebVitals;
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const listController = __importStar(require("../controllers/ListControllers"));
+const router = express_1.default.Router();
+router.get('/', listController.listController);
+router.get('/:listid', listController.getlistbyid);
+router.post('/', listController.newlistcontroller);
+router.patch('/:listid', listController.updateListConstroller);
+router.delete('/:listid', listController.deleteListController);
+exports.default = router;
+//# sourceMappingURL=ListRoutes.js.map

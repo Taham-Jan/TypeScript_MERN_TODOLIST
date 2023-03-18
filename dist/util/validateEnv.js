@@ -6,3 +6,4 @@ exports.default = (0, envalid_1.cleanEnv)(process.env, {
     MONGO_URI: (0, validators_1.str)(),
     PORT: (0, validators_1.port)(),
 });
+//# sourceMappingURL=validateEnv.js.map
