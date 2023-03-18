@@ -4,12 +4,12 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node src/server.ts",
+    "start": "node dist/src/server.js",
     "server":"nodemon src/server.ts",
     "client":"npm run start --prefix frontend",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"concurrently -k \"npm run server\" \"npm run client\""
+    "dev":"concurrently -k \"npm start\" \"npm run client\""
   },
   "keywords": [],
   "author": "",

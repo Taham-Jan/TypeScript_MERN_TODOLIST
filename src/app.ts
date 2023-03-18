@@ -3,13 +3,20 @@ import express, { NextFunction, Request, Response } from "express";
 import createHttpError ,{isHttpError} from 'http-errors';
 import morgan from 'morgan';
 import listRoute from './routes/ListRoutes'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require("path");
 const app = express();
+
 
 app.use(morgan('dev'));
 app.use(express.json());
 
 app.use('/api/todolist',listRoute);
 
+app.use(express.static(path.join(__dirname,'./frontend/build')));
+app.get('*',(req,res) => {
+  res.sendFile(path.resolve(__dirname,"frontend","build","index.html"))
+})
 app.use((req,res,next) => {
    next(createHttpError(404,"Endpoint Not Found !"))
 });
