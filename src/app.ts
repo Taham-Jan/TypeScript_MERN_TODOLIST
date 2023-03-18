@@ -13,14 +13,14 @@ app.use(express.json());
 
 app.use('/api/todolist',listRoute);
 
-app.use(express.static(path.join(__dirname,'./frontend/build')));
-app.get('*',(req,res) => {
-  res.sendFile(path.resolve(__dirname,"frontend","build","index.html"))
-})
 app.use((req,res,next) => {
    next(createHttpError(404,"Endpoint Not Found !"))
 });
 
+app.use(express.static(path.join(__dirname,'./frontend/build')));
+app.get('*',(req,res) => {
+  res.sendFile(path.resolve(__dirname,"frontend","build","index.html"))
+})
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
    console.error(error);
