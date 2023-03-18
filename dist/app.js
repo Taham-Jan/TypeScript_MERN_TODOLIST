@@ -35,9 +35,9 @@ const app = (0, express_1.default)();
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
 app.use('/api/todolist', ListRoutes_1.default);
-app.use((req, res, next) => {
-    next((0, http_errors_1.default)(404, "Endpoint Not Found !"));
-});
+// app.use((req, res, next) => {
+//     next((0, http_errors_1.default)(404, "Endpoint Not Found !"));
+// });
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((error, req, res, next) => {
     console.error(error);
