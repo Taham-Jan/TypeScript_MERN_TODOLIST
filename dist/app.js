@@ -39,6 +39,10 @@ app.use('/api/todolist', ListRoutes_1.default);
 app.use((req, res, next) => {
     next((0, http_errors_1.default)(404, "Endpoint Not Found !"));
 });
+app.use(express_1.default.static(path_1.default.join('../frontend/build')));
+app.get('/*', (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, "frontend", "index.html"));
+});
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((error, req, res, next) => {
     console.error(error);
@@ -49,10 +53,6 @@ app.use((error, req, res, next) => {
         errorMessage = error.message;
     }
     res.status(statuscode).json({ error: errorMessage });
-});
-app.use(express_1.default.static(path_1.default.join(__dirname, '../frontend/build')));
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, "frontend", "build", "index.html"));
 });
 exports.default = app;
 //# sourceMappingURL=app.js.map
