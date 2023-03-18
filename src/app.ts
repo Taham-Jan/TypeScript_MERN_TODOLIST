@@ -9,16 +9,16 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
-
+app.use(express.static(path.join('../frontend/build')));
+app.get('/', (req, res) => {
+     res.sendFile(path.resolve(__dirname, "frontend", "index.html"))
+});
 app.use('/api/todolist',listRoute);
 
 app.use((req,res,next) => {
    next(createHttpError(404,"Endpoint Not Found !"))
 });
-app.use(express.static(path.join('../frontend/build')));
-app.get('/*', (req, res) => {
-     res.sendFile(path.join(__dirname, "frontend", "index.html"))
-});
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
    console.error(error);
