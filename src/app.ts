@@ -11,7 +11,11 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.use('/api/todolist',listRoute);
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
 app.use((req,res,next) => {
    next(createHttpError(404,"Endpoint Not Found !"))
 });
@@ -27,12 +31,7 @@ app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
    }
    res.status(statuscode).json({ error: errorMessage })
 }); 
-app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-// Route all other requests to the client-side index.html file
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-});
 
 
  
