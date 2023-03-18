@@ -31,8 +31,6 @@ const express_1 = __importDefault(require("express"));
 const http_errors_1 = __importStar(require("http-errors"));
 const morgan_1 = __importDefault(require("morgan"));
 const ListRoutes_1 = __importDefault(require("./routes/ListRoutes"));
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require("path");
 const app = (0, express_1.default)();
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
@@ -50,10 +48,6 @@ app.use((error, req, res, next) => {
         errorMessage = error.message;
     }
     res.status(statuscode).json({ error: errorMessage });
-});
-app.use(express_1.default.static(path.join(__dirname, './frontend/build')));
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 });
 exports.default = app;
 //# sourceMappingURL=app.js.map
