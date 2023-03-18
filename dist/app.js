@@ -35,9 +35,10 @@ const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
-app.use(express_1.default.static(path_1.default.join('../frontend/build')));
-app.get('/', (req, res) => {
-    res.sendFile(path_1.default.resolve(__dirname, "frontend", "build", "index.html"));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../frontend/build')));
+// Route all other requests to the client-side index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, '../frontend/build', 'index.html'));
 });
 app.use('/api/todolist', ListRoutes_1.default);
 app.use((req, res, next) => {

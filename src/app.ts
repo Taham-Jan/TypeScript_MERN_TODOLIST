@@ -9,9 +9,11 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.static(path.join('../frontend/build')));
-app.get('/', (req, res) => {
-     res.sendFile(path.resolve(__dirname, "frontend","build", "index.html"))
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Route all other requests to the client-side index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
 });
 app.use('/api/todolist',listRoute);
 
