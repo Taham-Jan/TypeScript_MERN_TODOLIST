@@ -10,6 +10,11 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+app.get('*', (req, res) => {
+     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+});
+ 
 app.use('/api/todolist',listRoute);
 
 app.use((req,res,next) => {
@@ -28,10 +33,5 @@ app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
    res.status(statuscode).json({ error: errorMessage })
 }); 
 
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-app.get('*', (req, res) => {
-     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-});
- 
 
 export default app;
