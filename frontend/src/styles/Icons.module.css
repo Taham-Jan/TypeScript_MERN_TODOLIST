@@ -1,0 +1,15 @@
+.ico {
+    color: var(--secondary-color);
+    cursor: pointer;
+    opacity: 70%;
+    z-index: 1;
+    font-size: 20px;
+}
+
+.ico2 {
+    color: var(--primary-color);
+    cursor: pointer;
+    opacity: 70%;
+    z-index: 1;
+    font-size: 20px;
+}

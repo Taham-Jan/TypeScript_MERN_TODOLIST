@@ -1,0 +1,328 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+/* 
+:root{
+    --secondary-color: #323232;
+    --primary-color: #e9f1fc;
+    --redline:#d44147;
+  
+} */
+
+/* ADD NEW DIALOG BOX */
+.nameOfAddDialog {
+    position: fixed;
+    top: 17px;
+    left: 50px;
+    font-size: 10px;
+}
+
+.modalWrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(36, 36, 36, 0.9);
+    z-index: 1;
+}
+
+.DialogBoxContainer {
+    width: 80%;
+    height: 20rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: ease-in, font-size 200ms ease-in;
+    z-index: 999;
+}
+
+.flexrow {
+    display: flex;
+    position: relative;
+    margin-bottom: 1em;
+    /* margin-top: 1.9em; */
+}
+
+.label {
+    width: 30%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background: gray;
+}
+
+.placeholder {
+    color: var(--primary-color);
+    margin-left: 10px;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    pointer-events: none;
+    font-size: 0.80rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.input {
+    flex: 1;
+    padding: 0.9em;
+    border: 0;
+    color: gray;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    width: 20px;
+}
+
+.input:focus {
+    outline: none;
+    transition: transform .15s ease;
+    transform: scale(1.05);
+    border: 2px solid var(--secondary-color);
+
+}
+
+/* option:focus+.placeholder,
+option:not(:placeholder-shown)option:not(:focus)+.placeholder {
+    top: -55%;
+    color: var(--secondary-color);
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 3px;
+    width: 70%;
+    border: 2px double var(--secondary-color);
+} */
+
+
+/* MAIN TODO SCREEN */
+
+/* 
+.letterimg:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 1px;
+} */
+
+.paper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: var(--primary-color);
+
+}
+
+/* .paper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 18px;
+    border-right: 3px double var(--redline);
+    box-sizing: border-box;
+    margin-left: 25px;
+} */
+
+.papercontent {
+    margin: auto;
+    width: 98%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .letterimg {
+        height: 200px;
+    }
+
+    .paper:before {
+        animation: fadeIn 5s;
+        display: none;
+    }
+
+    .tblcontent {
+        font-size: 100px;
+    }
+
+    .tblheader {
+        font-size: 100px;
+    }
+
+    .label {
+        width: 25%;
+    }
+
+    .label img {
+        display: none;
+    }
+
+    .placeholder {
+        margin-left: 0;
+        font-size: 0.70rem;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    .letterimg {
+        height: 100px;
+
+    }
+
+    .paper:before {
+        animation: fadeIn 5s;
+        display: none;
+    }
+
+}
+
+.letter {
+    background: var(--primary-color);
+    margin: 26px auto 0;
+    max-width: 100%;
+    position: relative;
+    width: 85%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.letter:before,
+.letter:after {
+    content: "";
+    border-right: 3px solid #242424;
+    height: 98%;
+    position: absolute;
+    border-radius: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.letter:before {
+    background: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+}
+
+.letter:after {
+    background: var(--primary-color);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+}
+
+.letterimg {
+    border-radius:10px 10px 0px 0px;
+    max-width: 100%;
+    width: 100%;
+    height: 30vw;
+    min-height: 100px;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--redline);
+    position: relative;
+
+}
+
+table {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background: var(--primary-color);
+    color: mediumblue;
+    font-weight: bold;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tblheader {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tblcontent {
+    overflow-y: auto;
+    max-height: 1000px;
+    margin-top: 0px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tblcontent table {
+    padding: 5px;
+}
+
+th {
+    display: flex;
+    align-content: center;
+    align-items: baseline;
+    padding: 8px;
+    font-weight: 700;
+    font-size: 1.7vw;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    border-bottom: 3px solid #91d1d3;
+    
+}
+
+.textBox {
+    width: 100%;
+    overflow: hidden;
+    max-height: 400px;
+    word-break: break-all;
+}
+
+td {
+    display: flex;
+    align-content: center;
+    align-items: baseline;
+    padding: 8px;
+    vertical-align: top;
+    font-weight: 400;
+    font-size: 1.7vw;
+    color: var(--secondary-color);
+    font-family: "Handlee", cursive;
+    min-height: 12px;
+    height: 12px;
+
+}
+
+@media screen and (min-width: 1000px) {
+    td {
+        font-size: 15px;
+    }
+
+    th {
+        font-size: 15px;
+    }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
