@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af99923c.css",
+    "main.js": "/static/js/main.486a8342.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/bg.jpg": "/static/media/bg.a02774c1ad77c60a0da7.jpg",
+    "static/media/TODO-LIST.jpg": "/static/media/TODO-LIST.7b0c7437433bb34a5a34.jpg",
+    "static/media/TODO-LIST-D.jpg": "/static/media/TODO-LIST-D.166a39f1336a1f822d6f.jpg",
+    "static/media/moon.svg": "/static/media/moon.5fa7b2b55fc9f08e19891c95759d4d6d.svg",
+    "static/media/priorityB.svg": "/static/media/priorityB.f667849ab0641be628ee114620d3bc9b.svg",
+    "static/media/priorityW.svg": "/static/media/priorityW.b8a56b854738b11c5d715c3b379d607c.svg",
+    "static/media/sun.svg": "/static/media/sun.92f6f5c4a32423bc36988285489fe0d3.svg",
+    "static/media/datetimeW.svg": "/static/media/datetimeW.3a281685569eee1df629648b57108f49.svg",
+    "static/media/datetimeB.svg": "/static/media/datetimeB.5265874704b38b111ebe651aacfa44b7.svg",
+    "static/media/taskW.svg": "/static/media/taskW.14e312394d88af93bb082313ac18343c.svg",
+    "static/media/taskB.svg": "/static/media/taskB.a700447ca7de3300ab5f3dd78037e0be.svg",
+    "index.html": "/index.html",
+    "main.af99923c.css.map": "/static/css/main.af99923c.css.map",
+    "main.486a8342.js.map": "/static/js/main.486a8342.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af99923c.css",
+    "static/js/main.486a8342.js"
+  ]
+}
