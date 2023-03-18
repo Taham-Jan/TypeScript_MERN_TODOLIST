@@ -35,11 +35,6 @@ const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
-app.use(express_1.default.static(path_1.default.join(__dirname, '../frontend/build')));
-// Route all other requests to the client-side index.html file
-app.get('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../frontend/build', 'index.html'));
-});
 app.use('/api/todolist', ListRoutes_1.default);
 app.use((req, res, next) => {
     next((0, http_errors_1.default)(404, "Endpoint Not Found !"));
@@ -54,6 +49,11 @@ app.use((error, req, res, next) => {
         errorMessage = error.message;
     }
     res.status(statuscode).json({ error: errorMessage });
+});
+app.use(express_1.default.static(path_1.default.join(__dirname, '../frontend/build')));
+// Route all other requests to the client-side index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, '../frontend/build', 'index.html'));
 });
 exports.default = app;
 //# sourceMappingURL=app.js.map
