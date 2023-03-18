@@ -3,7 +3,7 @@ import express, { NextFunction, Request, Response } from "express";
 import createHttpError ,{isHttpError} from 'http-errors';
 import morgan from 'morgan';
 import listRoute from './routes/ListRoutes'
-
+import path from "path";
 const app = express();
 
 
@@ -28,6 +28,10 @@ app.use((error: unknown, req: Request, res: Response, next: NextFunction) => {
    res.status(statuscode).json({ error: errorMessage })
 }); 
 
-
+app.use(express.static(path.join(__dirname, './frontend/build')));
+app.get('*', (req, res) => {
+     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+});
+ 
 
 export default app;
