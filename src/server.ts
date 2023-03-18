@@ -1,5 +1,4 @@
 import app from './app';
-import express from "express";
 import env from './util/validateEnv'
 import mongoose from "mongoose";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
