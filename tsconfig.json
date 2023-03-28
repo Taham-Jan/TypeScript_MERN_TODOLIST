@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "target": "es6",
@@ -6,15 +7,15 @@
     "rootDir": "./src",
     "esModuleInterop": true,
     "sourceMap": true,
-   "typeRoots": [
+    "typeRoots": [
       "node_modules/@types",
       "@types"
-    ], 
-  },
-  "ts-node": {
-    "files":true
+    ],
   },
   "include": [
     "src/**/*"
-  ]
+  ],
+  "ts-node": {
+    "files": true
+  }
 }

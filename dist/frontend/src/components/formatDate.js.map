@@ -1,1 +1,0 @@
-{"version":3,"file":"formatDate.js","sourceRoot":"","sources":["../../../../frontend/src/components/formatDate.ts"],"names":[],"mappings":";;;AAAA,SAAgB,UAAU,CAAC,UAAkB;IACzC,OAAO,IAAI,IAAI,CAAC,UAAU,CAAC,CAAC,cAAc,CAAC,OAAO,EAC9C;QACI,IAAI,EAAE,SAAS;QACf,KAAK,EAAE,OAAO;QACd,GAAG,EAAE,SAAS;QACd,IAAI,EAAE,SAAS;QACf,MAAM,EAAE,SAAS;KACpB,CAAC,CAAC;AACX,CAAC;AATD,gCASC"}

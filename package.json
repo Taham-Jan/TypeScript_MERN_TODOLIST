@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "server": "nodemon src/server.ts",
-    "client": "npm start --prefix frontend",
+    "client": "npm run start --prefix frontend",
     "lint": "eslint . --ext .ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently -k \"npm start\" \"npm run client\""
