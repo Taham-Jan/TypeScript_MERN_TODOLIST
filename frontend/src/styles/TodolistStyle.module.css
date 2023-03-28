@@ -261,7 +261,7 @@ table {
     flex-wrap: wrap;
     flex-direction: column;
     max-width: 100%;
-    width: 100%;
+    width: 98%;
     height: 100%;
     max-height: 100%;
     background: var(--primary-color);
@@ -294,15 +294,14 @@ table {
 
 th {
     display: flex;
-    align-content: center;
-    align-items: baseline;
+    /* align-content: center; */
+    align-items: center;
     padding: 8px;
     font-weight: lighter;
     /* font-size: 1.7vw; */
     font-size: 16px;
     color: var(--secondary-color);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
 .textBox {
@@ -314,9 +313,8 @@ th {
 
 td {
     display: flex;
-    align-content: center;
-    align-items: baseline;
-    vertical-align: top;
+    align-items: center;
+    /* vertical-align: center; */
     font-weight: 400;
     /* font-size: 1.7vw; */
     font-size: 10px;
@@ -418,6 +416,6 @@ td {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 1px 10px;
     border-radius: 3px;
 }
