@@ -1,4 +1,3 @@
-
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Handlee);
 
@@ -89,11 +88,13 @@
     border: 2px solid var(--secondary-color);
 
 }
-.HeadingModal{
+
+.HeadingModal {
     color: #e9f1fc;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 10px;
+    font-weight: 700;
 }
 
 /* option:focus+.placeholder,
@@ -167,7 +168,7 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
     }
 
     .label {
-        width: 25%;
+        width: 30%;
     }
 
     .label img {
@@ -193,6 +194,7 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
     }
 
 }
+
 
 .letter {
     display: flex;
@@ -234,7 +236,7 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
     right: -3px;
     top: 1px;
     transform: rotate(1.4deg);
-    
+
 }
 
 .letterimg {
@@ -251,7 +253,7 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
 
 .mainContent {
 
-   width: 100%;
+    width: 100%;
 }
 
 table {
@@ -295,11 +297,11 @@ th {
     align-content: center;
     align-items: baseline;
     padding: 8px;
-    font-weight: 700;
-    font-size: 1.7vw;
+    font-weight: lighter;
+    /* font-size: 1.7vw; */
+    font-size: 16px;
     color: var(--secondary-color);
-    text-transform: uppercase;
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
@@ -316,8 +318,11 @@ td {
     align-items: baseline;
     vertical-align: top;
     font-weight: 400;
-    font-size: 1.7vw;
+    /* font-size: 1.7vw; */
+    font-size: 10px;
     color: var(--secondary-color);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
     /* font-family: "Handlee", cursive; */
     min-height: 12px;
     height: 25px;
@@ -330,7 +335,7 @@ td {
     }
 
     th {
-        font-size: 15px;
+        font-size: 20px;
     }
 }
 
@@ -351,10 +356,10 @@ td {
 /* Icons */
 
 .iconPopup {
-
+    padding-left: 10px;
+    padding-right: 10px;
     position: relative;
     display: inline-block;
-   
     -o-transition: all .5s;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
@@ -366,20 +371,20 @@ td {
 /* pop-up text */
 
 .iconPopup span {
-    color:var(--primary-color);
-    position:absolute;
-    font-family:sans-serif;
-    bottom:0;
-    left:-30px;
-    right:-30px;
- padding: 2px;
-    z-index:-1;
-    font-size:0.6rem;
-    border-radius:2px;
-    background:var(--secondary-color);
-    visibility:hidden;
-    opacity:0;
-    -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--primary-color);
+    position: absolute;
+    font-family: sans-serif;
+    bottom: 0px;
+    left: -28px;
+    right: -30px;
+    padding: 2px;
+    z-index: -1;
+    font-size: 0.6rem;
+    border-radius: 2px;
+    background: var(--secondary-color);
+    visibility: hidden;
+    opacity: 0;
+    -o-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -388,21 +393,21 @@ td {
 /* pop-up text arrow */
 
 .iconPopup span:before {
-    content:'';
-    width: 0; 
-    height: 0; 
+    content: '';
+    width: 0;
+    height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid var(--secondary-color);
-    position:absolute;
-    bottom:-4px;
-    left:40px;
+    position: absolute;
+    bottom: -4px;
+    left: 42px;
 }
 
 /* text pops up when icon is in hover state */
 
 .iconPopup:hover span {
-    bottom: 30px;
+    bottom: 35px;
     visibility: visible;
     opacity: 1;
 }

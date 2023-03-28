@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,6 +8,8 @@ body {
   background: url('../assets//bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
 
 }
 
@@ -27,10 +28,11 @@ code {
   height: 5rem;
   width: 5rem;
 }
-@media screen  and (max-width: 1000px){
+
+@media screen and (max-width: 1000px) {
   #moonlogo {
-  height: 3rem;
-  width: 3rem;
+    height: 3rem;
+    width: 3rem;
   }
 }
 

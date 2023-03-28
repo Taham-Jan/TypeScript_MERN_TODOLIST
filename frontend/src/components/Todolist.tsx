@@ -139,15 +139,16 @@ const Todolist = ({ dateTimeLogo, priorityLogo, taskLogo }: TodoListProps) => {
 												<tr key={list._id} className={`priority-${list.priority}-${list.status}`}>
 												<th  key={index} style={{borderBottom: "3px solid #91d1d3"}}>
 													<td className={styles.Numbering}>{index + 1}</td>
-												<th  className={styles.textBox} role="textbox" >task: {list.task}</th>
-												<td style={{ display: "flex", marginLeft:"auto",paddingTop:"20px" }}>
-													<td className={styles.iconPopup}><MarkAsDone onClick={(e) => { handleComplete(list); e.stopPropagation(); }} className={stylesicons.ico} /><span>MARK AS DONE</span></td>
-													<td className={styles.iconPopup}><FaEdit onClick={() => setonListEdit(list)} className={stylesicons.ico} /><span>UPDATE</span></td>
-													<td className={styles.iconPopup}><FaTrash onClick={(e) => { deleteList(list); e.stopPropagation(); }} className={stylesicons.ico} /><span>DELETE</span></td>
-													</td>
+													<h1 className={styles.HeadingModal} style={{fontSize:"16px"}}>TASK: </h1>
+												<th  className={styles.textBox} role="textbox" > {list.task}</th>
+												<div style={{ display: "flex",flexDirection:"row", marginLeft:"auto" }}>
+													<span className={styles.iconPopup}><MarkAsDone onClick={(e) => { handleComplete(list); e.stopPropagation(); }} className={stylesicons.ico} /><span>MARK AS DONE</span></span>
+													<span className={styles.iconPopup}><FaEdit onClick={() => setonListEdit(list)} className={stylesicons.ico} /><span>UPDATE</span></span>
+													<span className={styles.iconPopup}><FaTrash onClick={(e) => { deleteList(list); e.stopPropagation(); }} className={stylesicons.ico} /><span>DELETE</span></span>
+													</div>
 												</th>
 													
-													<th><td style={{margin:"auto"}}>Date created: {formatDate(createdUpdatedDate)}</td> {list.duedate ? (<td style={{margin:"auto"}}>time to complete: {formatDate(list.duedate)}</td>) : (<td  style={{margin:"auto"}}>time to complete: NO DATE ASSIGNED</td>)}</th>
+													<th><td style={{margin:"auto"}}>CREATED AT: {formatDate(createdUpdatedDate)}</td> {list.duedate ? (<td style={{margin:"auto"}}>DEADLINE: {formatDate(list.duedate)}</td>) : (<td  style={{margin:"auto"}}>time to complete: NO DATE ASSIGNED</td>)}</th>
 												</tr>
 											</table>
 {/* 

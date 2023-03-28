@@ -1,93 +1,108 @@
-
 #MainContainer {
-    position: relative;
-    height: 100vh;
-  }
-  
-  #MainContainer .MainContainer {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-  }
-  
-  .MainContainer {
-    max-width: 520px;
-    width: 100%;
-    line-height: 1.4;
-    text-align: center;
-  }
-  
+  position: relative;
+  height: 100vh;
+}
+
+#MainContainer .MainContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.MainContainer {
+  max-width: 520px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.MainContainer .TextContent {
+  position: relative;
+  height: 240px;
+}
+
+.MainContainer .TextContent h1 {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  font-weight: 900;
+  margin: 0px;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  letter-spacing: -40px;
+  margin-left: -20px;
+}
+
+.MainContainer .TextContent h1>span {
+  text-shadow: -8px 0px 0px var(--primary-color);
+}
+
+.MainContainer .TextContent h3 {
+  font-family: 'Cabin', sans-serif;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin: 0px;
+  letter-spacing: 3px;
+  padding-left: 6px;
+}
+
+.MainContainer h2 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 850px) {
   .MainContainer .TextContent {
-    position: relative;
-    height: 240px;
+    height: 200px;
   }
-  
+
+  #MainContainer .MainContainer {
+    top: 30%
+  }
   .MainContainer .TextContent h1 {
-    font-family: 'Montserrat', sans-serif;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    font-size: 200px;
-    font-weight: 900;
-    margin: 0px;
-    color: var(--secondary-color);
-    text-transform: uppercase;
-    letter-spacing: -40px;
-    margin-left: -20px;
+    font-size: 100px;
+    height: 200px;
+    /* line-height: 102px; */
+    letter-spacing: -10px;
+    margin-left: 0px;
   }
-  
-  .MainContainer .TextContent h1>span {
-    text-shadow: -8px 0px 0px var(--primary-color);
+}
+
+@media only screen and (max-width: 480px) {
+  .MainContainer .TextContent {
+    height: 162px;
   }
-  
-  .MainContainer .TextContent h3 {
-    font-family: 'Cabin', sans-serif;
-    position: relative;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--secondary-color);
-    margin: 0px;
-    letter-spacing: 3px;
-    padding-left: 6px;
+
+  .MainContainer .TextContent h1 {
+    font-size: 70px;
+    height: 120px;
+    line-height: 132px;
+    letter-spacing: -10px;
+    margin-left: 0px;
+
   }
-  
+
+  #MainContainer .MainContainer {
+    top: 20%
+  }
+
   .MainContainer h2 {
-    font-family: 'Cabin', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: var(--secondary-color);
-    margin-top: 0px;
-    margin-bottom: 25px;
+    font-size: 16px;
   }
-  
-  @media only screen and (max-width: 767px) {
-    .MainContainer .TextContent {
-      height: 200px;
-    }
-    .MainContainer .TextContent h1 {
-      font-size: 200px;
-    }
-  }
-  
-  @media only screen and (max-width: 480px) {
-    .MainContainer .TextContent {
-      height: 162px;
-    }
-    .MainContainer .TextContent h1 {
-      font-size: 162px;
-      height: 150px;
-      line-height: 162px;
-    }
-    .MainContainer h2 {
-      font-size: 16px;
-    }
-  }
-  
+}
