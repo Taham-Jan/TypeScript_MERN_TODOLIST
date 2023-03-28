@@ -79,6 +79,7 @@ const login = (req, res, next) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.login = login;
+// eslint-disable-next-line require-yield
 const logout = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     req.session.destroy(error => {
         if (error) {
