@@ -50,7 +50,7 @@ export const signUp: RequestHandler<unknown, unknown, signUpBody, unknown> = asy
         next(error);
     }
 };
-
+ 
 interface loginBody {
     username?: string,
     password?: string,
