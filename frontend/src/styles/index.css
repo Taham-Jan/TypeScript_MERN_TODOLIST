@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,29 +9,69 @@ body {
   background: url('../assets//bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 100%;
- 
+
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.priority-LOW {
+
+#moonlogo {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  cursor: pointer;
+  height: 5rem;
+  width: 5rem;
+}
+@media screen  and (max-width: 1000px){
+  #moonlogo {
+  height: 3rem;
+  width: 3rem;
+  }
+}
+
+.priority-LOW-false {
   border: 0.7vw solid #F2CD5C;
   z-index: 0;
   border-radius: 10px;
 }
 
-.priority-MEDIUM {
-  border :0.7vw  solid #ff9f1c;
+.priority-MEDIUM-false {
+  border: 0.7vw solid #ff9f1c;
   z-index: 0;
   border-radius: 10px;
 }
 
-.priority-HIGH {
+.priority-HIGH-false {
   border-radius: 10px;
-  border:0.7vw  solid #ef233c;
+  border: 0.7vw solid #ef233c;
   z-index: 0;
 }
 
+.priority-LOW-true {
+  border: 0.7vw solid green;
+  z-index: 0;
+  border-radius: 10px;
+  text-decoration: line-through;
+  opacity: 40%;
+}
+
+.priority-MEDIUM-true {
+  border: 0.7vw solid green;
+  z-index: 0;
+  border-radius: 10px;
+  text-decoration: line-through;
+  opacity: 40%;
+}
+
+.priority-HIGH-true {
+  border: 0.7vw solid green;
+  z-index: 0;
+  border-radius: 10px;
+  text-decoration: line-through;
+  opacity: 40%;
+}

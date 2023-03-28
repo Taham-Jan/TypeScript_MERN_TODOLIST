@@ -1,0 +1,60 @@
+.parentNavbar {
+
+    background-color: var(--primary-color);
+    z-index: 1;
+    width: 100%;
+
+}
+
+
+.Links {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    color: var(--secondary-color);
+}
+
+.singleLink:hover {
+    text-decoration: underline;
+}
+
+.singleLink {
+    padding: 20px;
+    font-weight: bold;
+}
+
+.rightButtons {
+    width: 50%;
+    margin-left: auto;
+    text-align: center;
+}
+
+@media screen and (max-width: 580px) {
+    .Links{
+        justify-content: center;
+    }
+    .rightButtons{
+margin-left: none;
+        width: 100%;
+    }
+}
+
+#toggleNavbar {
+
+
+    background-color: var(--primary-color);
+    z-index: 999;
+    margin: 0;
+
+}
+
+.Hamburger {
+    color: var(--primary-color);
+    border: none;
+    animation: ease-in 2s;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+
+
+}

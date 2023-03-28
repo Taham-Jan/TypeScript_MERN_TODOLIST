@@ -12,16 +12,18 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.light-theme{
+
+.light-theme {
   --secondary-color: #323232;
   --primary-color: #e9f1fc;
-  --redline:#d44147;
+  --redline: #d44147;
   /* #d44147 */
 }
-.dark-theme{
+
+.dark-theme {
   --secondary-color: #e9f1fc;
   --primary-color: #323232;
-  --redline:#e9f1fc;   
+  --redline: #e9f1fc;
   --themelogo: url('../public/logo192.png');
 }
 
@@ -44,6 +46,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

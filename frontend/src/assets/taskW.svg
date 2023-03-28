@@ -1,1 +1,12 @@
-<svg id="SvgjsSvg1012" width="288" height="288" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.com/svgjs"><defs id="SvgjsDefs1013"></defs><g id="SvgjsG1014" transform="matrix(1,0,0,1,0,0)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="288" height="288"><path fill="none" d="M0 0h24v24H0Z" data-name="Path 3697"></path><path fill="#e9f1fc" d="M8.999 20.1a1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5h11.1a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5Zm-6.6-1.5a1.5 1.5 0 0 1 1.5-1.5 1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5Zm6.6-5.1a1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5h11.1a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5Zm-6.6-1.5a1.5 1.5 0 0 1 1.5-1.5 1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5Zm6.6-5.1a1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5h11.1a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5Zm-6.6-1.5a1.5 1.5 0 0 1 1.5-1.5 1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5Z" data-name="Path 3568" class="color525863 svgShape"></path></svg></g></svg>
+<svg id="SvgjsSvg1012" width="288" height="288" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsSvgjs="http://svgjs.com/svgjs">
+	<defs id="SvgjsDefs1013">
+	</defs>
+	<g id="SvgjsG1014" transform="matrix(1,0,0,1,0,0)">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="288" height="288">
+			<path fill="none" d="M0 0h24v24H0Z" data-name="Path 3697">
+			</path>
+			<path fill="#e9f1fc" d="M8.999 20.1a1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5h11.1a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5Zm-6.6-1.5a1.5 1.5 0 0 1 1.5-1.5 1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5Zm6.6-5.1a1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5h11.1a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5Zm-6.6-1.5a1.5 1.5 0 0 1 1.5-1.5 1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5Zm6.6-5.1a1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5h11.1a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5Zm-6.6-1.5a1.5 1.5 0 0 1 1.5-1.5 1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5Z" data-name="Path 3568" class="color525863 svgShape">
+			</path>
+		</svg>
+	</g>
+</svg>

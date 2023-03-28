@@ -1,5 +1,7 @@
+
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Handlee);
+
 /* 
 :root{
     --secondary-color: #323232;
@@ -23,12 +25,12 @@
     bottom: 0;
     top: 0;
     background-color: rgba(36, 36, 36, 0.9);
-    z-index: 1;
+    z-index: 999;
 }
 
 .DialogBoxContainer {
     width: 80%;
-    height: 20rem;
+    height: 25rem;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     border-radius: 5px;
     background-color: rgba(255, 255, 255, .15);
@@ -87,6 +89,12 @@
     border: 2px solid var(--secondary-color);
 
 }
+.HeadingModal{
+    color: #e9f1fc;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
 
 /* option:focus+.placeholder,
 option:not(:placeholder-shown)option:not(:focus)+.placeholder {
@@ -103,15 +111,15 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
 
 /* MAIN TODO SCREEN */
 
-/* 
-.letterimg:after{
+
+.letterimg:after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     height: 50%;
     width: 1px;
-} */
+}
 
 .paper {
     position: relative;
@@ -119,7 +127,7 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
     height: 100%;
     margin: 0 auto;
     background: var(--primary-color);
-
+    border-radius: 10px;
 }
 
 /* .paper:before {
@@ -187,14 +195,18 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
 }
 
 .letter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: var(--primary-color);
     margin: 26px auto 0;
     max-width: 100%;
     position: relative;
-    width: 85%;
+    width: 90%;
     height: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
 }
 
 .letter:before,
@@ -222,10 +234,11 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
     right: -3px;
     top: 1px;
     transform: rotate(1.4deg);
+    
 }
 
 .letterimg {
-    border-radius:10px 10px 0px 0px;
+    border-radius: 10px 10px 0px 0px;
     max-width: 100%;
     width: 100%;
     height: 30vw;
@@ -236,11 +249,17 @@ option:not(:placeholder-shown)option:not(:focus)+.placeholder {
 
 }
 
+.mainContent {
+
+   width: 100%;
+}
+
 table {
     display: flex;
     flex-wrap: wrap;
-    width: fit-content;
+    flex-direction: column;
     max-width: 100%;
+    width: 100%;
     height: 100%;
     max-height: 100%;
     background: var(--primary-color);
@@ -248,6 +267,7 @@ table {
     font-weight: bold;
     border-collapse: collapse;
     text-align: center;
+
 }
 
 .tblheader {
@@ -256,12 +276,14 @@ table {
 
 .tblcontent {
     overflow-y: auto;
+    min-height: 500px;
     max-height: 1000px;
     margin-top: 0px;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 .tblcontent table {
@@ -277,8 +299,8 @@ th {
     font-size: 1.7vw;
     color: var(--secondary-color);
     text-transform: uppercase;
-    border-bottom: 3px solid #91d1d3;
     
+
 }
 
 .textBox {
@@ -292,14 +314,13 @@ td {
     display: flex;
     align-content: center;
     align-items: baseline;
-    padding: 8px;
     vertical-align: top;
     font-weight: 400;
     font-size: 1.7vw;
     color: var(--secondary-color);
-    font-family: "Handlee", cursive;
+    /* font-family: "Handlee", cursive; */
     min-height: 12px;
-    height: 12px;
+    height: 25px;
 
 }
 
@@ -325,4 +346,73 @@ td {
 
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Icons */
+
+.iconPopup {
+
+    position: relative;
+    display: inline-block;
+   
+    -o-transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* pop-up text */
+
+.iconPopup span {
+    color:var(--primary-color);
+    position:absolute;
+    font-family:sans-serif;
+    bottom:0;
+    left:-30px;
+    right:-30px;
+ padding: 2px;
+    z-index:-1;
+    font-size:0.6rem;
+    border-radius:2px;
+    background:var(--secondary-color);
+    visibility:hidden;
+    opacity:0;
+    -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* pop-up text arrow */
+
+.iconPopup span:before {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--secondary-color);
+    position:absolute;
+    bottom:-4px;
+    left:40px;
+}
+
+/* text pops up when icon is in hover state */
+
+.iconPopup:hover span {
+    bottom: 30px;
+    visibility: visible;
+    opacity: 1;
+}
+
+.Numbering {
+    margin-right: 5px;
+    font-size: 80%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
 }

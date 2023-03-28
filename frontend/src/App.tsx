@@ -8,11 +8,11 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
-     <QueryClientProvider client={queryClient}>
-    <Homescreen/>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <Homescreen />
+      </QueryClientProvider>
     </>
   );
-} 
+}
 
 export default App;

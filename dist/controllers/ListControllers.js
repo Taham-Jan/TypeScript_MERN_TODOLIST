@@ -16,10 +16,12 @@ exports.deleteListController = exports.updateListConstroller = exports.newlistco
 const List_1 = __importDefault(require("../models/List"));
 const http_errors_1 = __importDefault(require("http-errors"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const assertIsDefined_1 = require("../util/assertIsDefined");
 const listController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    const authenticatedUserId = req.session.userId;
     try {
-        // throw createHttpError(401);
-        const todolists = yield List_1.default.find().exec();
+        (0, assertIsDefined_1.assertIsDefined)(authenticatedUserId);
+        const todolists = yield List_1.default.find({ userId: authenticatedUserId }).exec();
         res.status(200).json(todolists);
     }
     catch (error) {
@@ -29,13 +31,18 @@ const listController = (req, res, next) => __awaiter(void 0, void 0, void 0, fun
 exports.listController = listController;
 const getlistbyid = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const listid = req.params.listid;
+    const authenticatedUserId = req.session.userId;
     try {
+        (0, assertIsDefined_1.assertIsDefined)(authenticatedUserId);
         if (!mongoose_1.default.isValidObjectId(listid)) {
             throw (0, http_errors_1.default)(400, "Invalid TODO List ID");
         }
         const todolist = yield List_1.default.findById(listid).exec();
         if (!todolist) {
             throw (0, http_errors_1.default)(404, "Todo-list Not Found");
+        }
+        if (!todolist.userId.equals(authenticatedUserId)) {
+            throw (0, http_errors_1.default)(401, "You cannot access this page");
         }
         res.status(200).json(todolist);
     }
@@ -49,7 +56,9 @@ const newlistcontroller = (req, res, next) => __awaiter(void 0, void 0, void 0, 
     const priority = req.body.priority;
     const duedate = req.body.duedate;
     const status = req.body.status;
+    const authenticatedUserId = req.session.userId;
     try {
+        (0, assertIsDefined_1.assertIsDefined)(authenticatedUserId);
         if (!task) {
             throw (0, http_errors_1.default)(400, "Please define a task");
         }
@@ -57,6 +66,7 @@ const newlistcontroller = (req, res, next) => __awaiter(void 0, void 0, void 0, 
             throw (0, http_errors_1.default)(400, "Please set a priority of your task");
         }
         const createnewlist = yield List_1.default.create({
+            userId: authenticatedUserId,
             task: task,
             priority: priority,
             duedate: duedate,
@@ -75,7 +85,9 @@ const updateListConstroller = (req, res, next) => __awaiter(void 0, void 0, void
     const newpriority = req.body.priority;
     const newduedate = req.body.duedate;
     const newstatus = req.body.status;
+    const authenticatedUserId = req.session.userId;
     try {
+        (0, assertIsDefined_1.assertIsDefined)(authenticatedUserId);
         if (!mongoose_1.default.isValidObjectId(listid)) {
             throw (0, http_errors_1.default)(400, "Invalid TODO List ID");
         }
@@ -88,6 +100,9 @@ const updateListConstroller = (req, res, next) => __awaiter(void 0, void 0, void
         const todolist = yield List_1.default.findById(listid).exec();
         if (!todolist) {
             throw (0, http_errors_1.default)(404, "Todo-list not found");
+        }
+        if (!todolist.userId.equals(authenticatedUserId)) {
+            throw (0, http_errors_1.default)(401, "You cannot access this page");
         }
         todolist.task = newtask;
         todolist.priority = newpriority;
@@ -103,13 +118,18 @@ const updateListConstroller = (req, res, next) => __awaiter(void 0, void 0, void
 exports.updateListConstroller = updateListConstroller;
 const deleteListController = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     const listid = req.params.listid;
+    const authenticatedUserId = req.session.userId;
     try {
+        (0, assertIsDefined_1.assertIsDefined)(authenticatedUserId);
         if (!mongoose_1.default.isValidObjectId(listid)) {
             throw (0, http_errors_1.default)(400, "Invalid TODO List ID");
         }
         const todolist = yield List_1.default.findById(listid).exec();
         if (!todolist) {
             throw (0, http_errors_1.default)(404, "Todo-list not found");
+        }
+        if (!todolist.userId.equals(authenticatedUserId)) {
+            throw (0, http_errors_1.default)(401, "You cannot access this page");
         }
         const deleted = todolist.remove();
         res.status(204).json(deleted);

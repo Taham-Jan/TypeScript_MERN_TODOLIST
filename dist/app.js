@@ -31,11 +31,29 @@ const express_1 = __importDefault(require("express"));
 const http_errors_1 = __importStar(require("http-errors"));
 const morgan_1 = __importDefault(require("morgan"));
 const ListRoutes_1 = __importDefault(require("./routes/ListRoutes"));
+const UserRoute_1 = __importDefault(require("./routes/UserRoute"));
 const path_1 = __importDefault(require("path"));
+const express_session_1 = __importDefault(require("express-session"));
+const validateEnv_1 = __importDefault(require("./util/validateEnv"));
+const connect_mongo_1 = __importDefault(require("connect-mongo"));
+const authMiddleware_1 = require("./Middleware/authMiddleware");
 const app = (0, express_1.default)();
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
-app.use('/api/todolist', ListRoutes_1.default);
+app.use((0, express_session_1.default)({
+    secret: validateEnv_1.default.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 60 * 60 * 1000,
+    },
+    rolling: true,
+    store: connect_mongo_1.default.create({
+        mongoUrl: validateEnv_1.default.MONGO_URI
+    }),
+}));
+app.use('/api/todolist', authMiddleware_1.requiresAuth, ListRoutes_1.default);
+app.use('/api/users', UserRoute_1.default);
 app.use(express_1.default.static(path_1.default.join(__dirname, '../frontend/build')));
 app.get('*', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, '../frontend/build', 'index.html'));
